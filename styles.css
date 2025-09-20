@@ -1,0 +1,281 @@
+
+/* General Styles */
+body {
+  margin: 0;
+  background: #ebeef3; /* Default fallback background color */
+  background-image: url('image.jpg'); /* Add your background image here */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling of the image */
+  font-family: 'Arial', 'Cursive'; /* Ensure a fallback font */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: rgba(255, 255, 255, 0.627);
+  
+}
+
+.hidden {
+  display: none;
+}
+/* Greeting Card Style */
+.greeting-card {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  margin: 100px auto;
+  align-content: center;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.greeting-card img {
+  width: 200%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;  
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: .5s ease-in-out;
+  transform: perspective(1000px) rotateey(0deg);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Front of the Card */
+.card-front {
+  background: #d32f2f;
+  color: white;
+  font-size: 1.5em;
+}
+
+/* Back of the Card */
+.card-back{
+  background: #eef0f500;
+  color: rgb(227, 235, 230);
+  font-size: 1.5em;
+  transform: rotateY(180deg);
+}
+.card:hover{
+  transform: rotateY('180deg');
+}
+/* Fullscreen Animation */
+.animation-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1e3b70, #355fa8);
+  overflow: hidden;
+}
+
+/* Clouds Container */
+#clouds {
+  position: absolute;
+  top: 5%; /* Adjust cloud height */
+  left: 0;
+  width: 100%;
+  height: 20%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Cloud Styles */
+.cloud {
+  position: absolute;
+  background: #ffffff15;
+  border-radius: 50%; /* Make clouds circular */
+  box-shadow: 
+    -20px 20px 30px rgba(0, 0, 0, 0.116), /* Add a soft shadow */
+    20px 20px 40px rgba(0, 0, 0, 0.044);
+  opacity: 0.8;
+  animation: moveClouds 30s linear infinite; /* Infinite animation */
+}
+
+/* Large Clouds */
+.cloud.large {
+  width: 150px;
+  height: 80px;
+  top: 20%;
+  animation-duration: 35s;
+}
+
+/* Medium Clouds */
+.cloud.medium {
+  width: 100px;
+  height: 60px;
+  top: 40%;
+  animation-duration: 40s;
+}
+
+/* Small Clouds */
+.cloud.small {
+  width: 80px;
+  height: 40px;
+  top: 60%;
+  animation-duration: 45s;
+}
+
+/* Clouds Animation */
+@keyframes moveClouds {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Animated Trees */
+#animatedTrees {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.tree {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  background: linear-gradient(to bottom, #013220, #02642e);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: sway 3s ease-in-out infinite;
+}
+
+.tree.large {
+  width: 80px;
+  height: 150px;
+  animation-duration: 2.5s;
+}
+
+.tree.small {
+  width: 40px;
+  height: 80px;
+  animation-duration: 3.5s;
+}
+
+.tree.medium {
+  width: 60px;
+  height: 120px;
+  animation-duration: 3s;
+}
+
+
+/* Snowfall */
+canvas#snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #fff); /* Sky to ground */
+  overflow: hidden;
+}
+/* Santa Animation */
+.santa {
+  position: absolute;
+  top: 10%;
+  left: -150px;
+  width: 150px;
+  animation: santaMove 8s linear infinite;
+}
+
+.santa img {
+  width: 250%;
+}
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  overflow: hidden;
+}
+@keyframes santaMove {
+  0% {
+    transform: translateX(-150px);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-10px); /* Slight upward motion */
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+/* Title Animation */
+.title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-style:oblique;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInTitle 5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+.Paragraph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em;
+  color: rgb(246, 243, 246);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  animation: fadeInParagraph 7s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInParagraph {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

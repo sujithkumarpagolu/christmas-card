@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Christmas Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Greeting Card -->
+  <div class="greeting-card" id="greetingCard">
+    <div class="card-inner" id="cardInner">
+      <!-- Front of the Card -->
+      <div class="card-front">
+        <img src="front1.jpg" alt="Front-image">
+      </div>
+      <!-- Back of the Card -->
+      <div class="card-back">
+        <img src="back1.jpg" alt="back-image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Animation -->
+  <div class="animation-screen hidden" id="animationScreen">
+
+    <div id="clouds">
+      <div class="cloud large"></div>
+      <div class="cloud medium"></div>
+      <div class="cloud small"></div>
+    </div>
+    
+    <!-- Animated Trees -->
+    <div id="animatedTrees">
+      <div class="tree large"></div>
+      <div class="tree small"></div>
+      <div class="tree medium"></div>
+      <div class="tree medium"></div>
+      <div class="tree large"></div>
+      <div class="tree small"></div>
+    </div>
+
+    <!-- Snow Effect -->
+    <canvas id="snow"></canvas>
+<div clacc="scene">
+    <!-- Santa  Title , Gifts -->
+    <div class="santa" id="santa">
+      <img src="santa.png" alt="Santa's " />
+      <!-- Falling Gifts -->
+      <div class="gift-bag" id="gift-bag"></div>
+    </div>
+  </div>
+    <div class="title" id="title">
+      ⛄ Merry Christmas ⛄ 
+    </div>
+    <div class="Paragraph" id="Paragraph" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";>
+    🪄Wishing you peace, joy, and <br> love this holiday season!🪄
+    </div>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+      <source src="carol-of-the-bells-xmas.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
